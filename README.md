@@ -112,7 +112,7 @@ The repository is organized into the following folders:
 
 Contributions are always welcome! If you have ideas or improvements to share, feel free to create a pull request. Here's how:
 
-Fork the repository. Create a new branch (git checkout -b feature/new-widget). Commit your changes (git commit -m 'Add new widget example'). Push to the branch (git push origin feature/new-widget). Create a pull request.
+Fork the repository. Create a new branch (git checkout -b feature/refactor-code). Commit your changes (git commit -m 'write message here'). Push to the branch (git push origin feature/refactor-code). Create a pull request.
 
 📣 Get Involved:
 
