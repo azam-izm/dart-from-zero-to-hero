@@ -49,6 +49,7 @@ The repository is organized into the following folders:
    - `set.dart`: Sets in Dart.
    - `set_operations.dart`: Common set operations.
    - `collection_iterators.dart`: Iterating over collections.
+   - `dart_complete_type_conversion_masterclass.dart`: Comprehensive guide to converting between all Dart data types
 
 6. **06_Object_Oriented_Programming**  
    - `class_and_object.dart`: Classes and objects.
