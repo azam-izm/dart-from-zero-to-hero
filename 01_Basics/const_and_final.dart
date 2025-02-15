@@ -7,39 +7,38 @@ void main() {
   // (1) 'final' - Variable assigned only once at runtime
   final String greeting;
   greeting = "Hello, Dart!";
-  print(greeting); 
+  print(greeting); //Output: Hello, Dart!
 
   // Uncommenting the following line will cause a compile-time error:
   // greeting = "Hello, World!"; // Error: The final variable 'greeting' can only be set once.
 
   // 'const' - Value must be known at compile-time
   const double pi = 3.1416;
-  print("Value of Pi: $pi");
+  print("Value of Pi: $pi"); //Output: Value of Pi: 3.1416
 
   // Uncommenting the following line will cause a compile-time error:
   // pi = 3.14; // Error: A const variable can't be assigned a new value.
 
   // (2) 'final' with non-constant variable assignment
-  final nonFinalVariable =
-      pi; // pi is constant, but can be assigned to final variable
-  print("Non Final Variable: $nonFinalVariable");
+  final nonFinalVariable = pi; // pi is constant, but can be assigned to final variable
+  print("Non Final Variable: $nonFinalVariable"); //Output: Non Final Variable: 3.1416
 
   // Uncommenting the following line will cause a compile-time error:
   // const nonConstVariable = greeting; // Error: Const variables must be initialized with constant values.
 
   // (3) Modifying data in final list but not reassigned reference
   final List<String> myDays = ['Monday', 'Tuesday', 'Wednesday'];
-  print("My days list: $myDays");
+  print("My days list: $myDays"); //Output: My days list: [Monday, Tuesday, Wednesday]
 
   // Cannot reassign the list reference, will cause an error:
   // myDays = ['New Day']; // Error: Cannot assign to a final variable.
 
   // Can modify the content of the list (add or remove items):
   myDays.add('Thursday');
-  print("Modified list: $myDays");
+  print("Modified list: $myDays"); //Output: Modified list: [Monday, Tuesday, Wednesday, Thursday]
 
   myDays.remove('Wednesday');
-  print("Modified list: $myDays");
+  print("Modified list: $myDays"); //Output: Modified list: [Monday, Tuesday, Thursday]
 
   // 'const' list that cannot be modified
   const List<String> daysOfWeek = [
@@ -51,7 +50,7 @@ void main() {
     'Saturday',
     'Sunday'
   ];
-  print("Days of the week: $daysOfWeek");
+  print("Days of the week: $daysOfWeek"); //Output: Days of the week: [Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday]
 
   // Uncommenting the following lines will cause errors because a const list is immutable:
   // daysOfWeek = ['New Day']; // Error: Constant variables can't be assigned a new value.
