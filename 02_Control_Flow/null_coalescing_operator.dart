@@ -21,11 +21,11 @@ void main() {
 
   // Example 2: Using ??= to assign a value only if it's null
   int? age;
-  age ??= 25; // Assigns 25 because age is null
-  print("Age: $age"); // Output: Age: 25
+  age ??= 27; // Assigns 27 because age is null
+  print("Age: $age"); // Output: Age: 27
 
-  age ??= 30; // Doesn't assign because age is already 25
-  print("Age: $age"); // Output: Age: 25
+  age ??= 30; // Doesn't assign because age is already 27
+  print("Age: $age"); // Output: Age: 27
 
   // Example 3: Using ?? with user input (simulated)
   String? userInput;
@@ -33,8 +33,8 @@ void main() {
   print("User Input: $result"); // Output: User Input: Default Value
 
   // Example 4: Using ?? in function parameters
-  greetUser(null);
-  greetUser("Charlie");
+  greetUser(null); //Output: Hello, Guest!
+  greetUser("Azam"); //Output: Hello, Azam!
 }
 
 void greetUser(String? name) {
