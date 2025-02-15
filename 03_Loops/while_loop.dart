@@ -48,7 +48,7 @@ void main() {
     idx++;
   }
   if (found) {
-    print("Found target $target at index $idx");
+    print("Found target $target at index $idx"); //Output: Found target 9 at index 3
   } else {
     print("Target not found.");
   }
