@@ -18,7 +18,7 @@
 void main() {
   // Example 1: Switch-case with integers (days of the week)
   int dayNumber = 3;
-  print("Example 1: Days of the Week");
+  print("Example 1: Days of the Week"); //Output: Example 1: Days of the Week
 
   switch (dayNumber) {
     case 1:
@@ -28,7 +28,7 @@ void main() {
       print("Tuesday");
       break;
     case 3:
-      print("Wednesday");
+      print("Wednesday"); //Output: Wednesday
       break;
     case 4:
       print("Thursday");
@@ -48,14 +48,14 @@ void main() {
 
   // Example 2: Switch-case with strings (traffic light colors)
   String trafficLightColor = "YELLOW";
-  print("\nExample 2: Traffic Light Colors");
+  print("\nExample 2: Traffic Light Colors"); //Output: Example 2: Traffic Light Colors
 
   switch (trafficLightColor.toLowerCase()) {
     case 'red':
       print("Stop!");
       break;
     case 'yellow':
-      print("Get Ready!");
+      print("Get Ready!"); //Output: Get Ready!
       break;
     case 'green':
       print("Go!");
