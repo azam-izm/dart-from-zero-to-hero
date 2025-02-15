@@ -12,7 +12,7 @@ The repository is organized into the following folders:
    - `hello_world.dart`: Your first Dart program.
    - `variables_and_data_types.dart`: Learn about variables and data types.
    - `input_output.dart`: How to take input and display output.
-   - `constants_and_final.dart`: Understanding `const` and `final`.
+   - `const_and_final.dart`: Understanding `const` and `final`.
 
 2. **02_Control_Flow**  
    - `if_else.dart`: Conditional statements.
