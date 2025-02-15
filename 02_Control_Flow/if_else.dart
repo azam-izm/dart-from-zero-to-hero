@@ -9,7 +9,7 @@ void main() {
 
   // Checking if the number is positive or negative
   if (number > 0) {
-    print("The number is positive.");
+    print("The number is positive."); //Output: The number is positive.
   } else {
     print("The number is negative or zero.");
   }
@@ -20,7 +20,7 @@ void main() {
 
   // Checking if the person is eligible to participate in an event (age >= 18) OR (age < 18 and has parental consent)
   if (age >= 18 || hasParentalConsent) {
-    print("Eligible to participate.");
+    print("Eligible to participate."); //Output: Eligible to participate.
   } else {
     print("Not eligible to participate.");
   }
@@ -33,7 +33,7 @@ void main() {
   if (temperature <= 20 && isRaining) {
     print("It's cold and raining. Take an umbrella!");
   } else {
-    print("No umbrella needed.");
+    print("No umbrella needed."); //Output: No umbrella needed.
   }
 
   // Example 4: if-else if-else ladder for multiple conditions
@@ -43,7 +43,7 @@ void main() {
   if (score >= 90) {
     print("Grade: A");
   } else if (score >= 80) {
-    print("Grade: B");
+    print("Grade: B"); //Output: Grade: B
   } else if (score >= 70) {
     print("Grade: C");
   } else if (score >= 60) {
@@ -81,7 +81,7 @@ void main() {
       // If it's not the weekend or holiday, it's a regular day
       if (isTired) {
         // If the person is tired, suggest taking it easy
-        print("It's a regular workday, but you're tired. Take it easy today.");
+        print("It's a regular workday, but you're tired. Take it easy today."); //Output: It's a regular workday, but you're tired. Take it easy today.
       } else {
         print("It's a regular day. Time to work hard!");
       }
