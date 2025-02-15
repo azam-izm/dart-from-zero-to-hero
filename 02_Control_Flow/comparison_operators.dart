@@ -38,7 +38,7 @@ void main() {
 
   // Example 7: Using comparison in a conditional statement
   if (a < b) {
-    print("a is smaller than b.");
+    print("a is smaller than b."); //a is smaller than b.
   } else {
     print("a is greater than or equal to b.");
   }
