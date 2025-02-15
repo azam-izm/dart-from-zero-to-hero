@@ -21,33 +21,35 @@ void main() {
   // Example 1: Iterating over a List
   List<String> colors = ["Red", "Green", "Blue"];
 
-  print("Colors List:");
+  print("Colors List:"); //Output: Colors List:
   for (var color in colors) {
-    print(color);
+    print(color); //Output: Red, Green, Blue
   }
 
   // Example 2: Iterating over a Set
   Set<int> numbers = {1, 2, 3, 4, 5};
 
-  print("\nNumbers Set:");
+  print("\nNumbers Set:"); //Output: Numbers Set:
   for (var number in numbers) {
-    print(number);
+    print(number); //Output: 1, 2, 3, 4, 5
   }
 
   // Example 3: Iterating over a Map (keys and values)
   Map<String, int> ages = {"Azam": 27, "Umar": 28, "Sohail": 26};
 
-  print("\nNames and Ages:");
+  print("\nNames and Ages:"); //Output: Names and Ages:
   for (var name in ages.keys) {
-    print("$name is ${ages[name]} years old");
+    print("$name is ${ages[name]} years old"); 
+    //Output: Azam is 27 years old, Umar is 28 years old, Sohail is 26 years old
   }
 
   // Example 4: Iterating over a String (characters)
   String word = "Dart";
 
-  print("\nCharacters in '$word':");
+  print("\nCharacters in '$word':"); //Output: Characters in 'Dart':
   for (var char in word.runes) {
-    print(String.fromCharCode(char));
+    print(String.fromCharCode(char)); 
+    //Output: D, a, r, t
   }
 
   // Example 5: Using for-in with a list of objects
@@ -57,9 +59,10 @@ void main() {
     Person("Sohail", 26)
   ];
 
-  print("\nList of People:");
+  print("\nList of People:"); //Output: List of People:
   for (var person in people) {
-    print("${person.name} is ${person.age} years old.");
+    print("${person.name} is ${person.age} years old."); 
+    //Output: Azam is 27 years old., Umar is 28 years old., Sohail is 26 years old.
   }
 }
 
