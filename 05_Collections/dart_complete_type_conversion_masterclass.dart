@@ -58,6 +58,8 @@ void main() {
   // Int to List
   List<int> intToList = [originalInt]; // Output: intToList: [42]
   int listBackToInt = intToList.first; // Output: listBackToInt: 42
+  //OR
+  //int listBackToInt = intToList[0]; // Output: listBackToInt: 42
 
   // Int to Set
   Set<int> intToSet = {originalInt}; // Output: intToSet: {42}
@@ -94,6 +96,8 @@ void main() {
   List<double> doubleToList = [originalDouble]; // Output: doubleToList: [3.14]
   double listBackToDouble =
       doubleToList.first; // Output: listBackToDouble: 3.14
+  //OR
+  // double listBackToDouble = doubleToList[0]; // Output: listBackToDouble: 3.14
 
   // Double to Set
   Set<double> doubleToSet = {originalDouble}; // Output: doubleToSet: {3.14}
@@ -162,6 +166,8 @@ void main() {
   // Bool to List
   List<bool> boolToList = [originalBool]; // Output: boolToList: [true]
   bool listBackToBool = boolToList.first; // Output: listBackToBool: true
+  //OR
+  // bool listBackToBool = boolToList[0]; // Output: listBackToBool: true
 
   // Bool to Set
   Set<bool> boolToSet = {originalBool}; // Output: boolToSet: {true}
