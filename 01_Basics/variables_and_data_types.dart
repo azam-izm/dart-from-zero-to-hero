@@ -6,33 +6,33 @@
 
 void main() {
   // Integer type variable (int)
-  int age = 25;
-  print("Age: $age");
+  int age = 27;
+  print("Age: $age"); //Output: Age: 27
 
   // Double type variable (double) for decimal values
   double price = 99.99;
-  print("Price: \$${price}");
+  print("Price: \$${price}"); //Output: Price: $99.99
 
   // String type variable (String)
-  String name = "John Doe";
-  print("Name: $name");
+  String name = "Muhammad Azam";
+  print("Name: $name"); //Output: Name: Muhammad Azam
 
   // Boolean type variable (bool)
   bool isStudent = false;
-  print("Is Student: $isStudent");
+  print("Is Student: $isStudent"); //Output: Is Student: false
 
   // Dynamic type variable (dynamic) - can hold any type of value
   dynamic flexibleVar = "This is a string";
-  print("Dynamic Variable (String): $flexibleVar");
+  print("Dynamic Variable (String): $flexibleVar"); //Output: Dynamic Variable (String): This is a string
   flexibleVar = 42; // Now holding an integer
-  print("Dynamic Variable (Integer): $flexibleVar");
+  print("Dynamic Variable (Integer): $flexibleVar"); //Output: Dynamic Variable (Integer): 42
 
   // Final and Const variables (Immutable variables)
   final currentTime = DateTime.now(); // Assigned at runtime
-  print("Current Time: $currentTime");
+  print("Current Time: $currentTime"); //Output: Current Time: 2025-02-16 01:37:50.148512
 
   const pi = 3.1416; // Assigned at compile-time
-  print("Value of Pi: $pi");
+  print("Value of Pi: $pi"); //Output: Value of Pi: 3.1416
 }
 
 /*
