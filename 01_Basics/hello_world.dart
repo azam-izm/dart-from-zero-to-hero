@@ -7,7 +7,7 @@
 // The main function serves as the entry point of every Dart program.
 void main() {
   // Printing "Hello, World!" to the console using the print() function.
-  print("Hello, World!");
+  print("Hello, World!"); //Output: Hello, World!
 }
 
 /*
