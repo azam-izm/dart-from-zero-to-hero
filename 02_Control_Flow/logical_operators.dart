@@ -18,7 +18,7 @@ void main() {
   bool isWarm = true;
 
   if (isSunny && isWarm) {
-    print("It's a perfect day for a picnic!");
+    print("It's a perfect day for a picnic!"); //Output: It's a perfect day for a picnic!
   } else {
     print("Maybe stay indoors today.");
   }
@@ -28,7 +28,7 @@ void main() {
   bool hasDiscountCard = false;
 
   if (isStudent || hasDiscountCard) {
-    print("You are eligible for a discount.");
+    print("You are eligible for a discount."); //Output: You are eligible for a discount.
   } else {
     print("No discount available.");
   }
@@ -37,7 +37,7 @@ void main() {
   bool isOnline = false;
 
   if (!isOnline) {
-    print("User is offline.");
+    print("User is offline."); //Output: User is offline.
   } else {
     print("User is online.");
   }
@@ -47,8 +47,8 @@ void main() {
   bool hasLicense = true;
   bool hasInsurance = false;
 
-  if ((age >= 18 && hasLicense) || hasInsurance) {
-    print("You are allowed to drive.");
+  if ((age >= 18 && hasLicense) || hasInsurance) { 
+    print("You are allowed to drive."); //Output: You are allowed to drive. 
   } else {
     print("You are not allowed to drive.");
   }
