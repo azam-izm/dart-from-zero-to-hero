@@ -34,12 +34,12 @@ void main() {
   print("Printing a Pattern:"); //Output: Printing a Pattern:
   // Example 2: Printing a Right-Angled Triangle Pattern
   int rows = 4;
-  for (int i = 1; i <= rows; i++) {
-    String line = "";
-    for (int j = 1; j <= i; j++) {
-      line += "* ";
+  for (int i = 1; i <= rows; i++) { // Outer loop: Controls rows
+    String line = ""; // Initialize empty string for each row
+    for (int j = 1; j <= i; j++) { // Inner loop: Controls number of '*' in each row
+      line += "* "; // Append '* ' to the line string
     }
-    print(line); 
+    print(line);  // Print the complete line
     //Output: 
     //* 
     //* * 
