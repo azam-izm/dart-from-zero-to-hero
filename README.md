@@ -33,7 +33,7 @@ The repository is organized into the following folders:
    - `nested_loops.dart`: Nested loops.
 
 4. **04_Functions**  
-   - `understanding_all_types_of_functions_in_dart.dart`: Basic function syntax.
+   - `understanding_all_types_of_functions_in_dart.dart`: Understanding all types of functions in dart. 
    - `parameter_types_in_dart.dart`: Named and positional parameters.
 
 5. **05_Collections**  
