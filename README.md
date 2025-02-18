@@ -33,12 +33,8 @@ The repository is organized into the following folders:
    - `nested_loops.dart`: Nested loops.
 
 4. **04_Functions**  
-   - `basic_function.dart`: Basic function syntax.
+   - `understanding_all_types_of_functions_in_dart.dart`: Basic function syntax.
    - `parameter_types_in_dart.dart`: Named and positional parameters.
-   - `function_return_values.dart`: Returning values from functions.
-   - `arrow_function.dart`: Arrow functions.
-   - `recursive_function.dart`: Recursive functions.
-   - `higher_order_function.dart`: Higher-order functions.
 
 5. **05_Collections**  
    - `list.dart`: Lists in Dart.
