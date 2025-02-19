@@ -38,11 +38,8 @@ The repository is organized into the following folders:
 
 5. **05_Collections**  
    - `list.dart`: Lists in Dart.
-   - `list_operations.dart`: Common list operations.
    - `map.dart`: Maps in Dart.
-   - `map_operations.dart`: Common map operations.
    - `set.dart`: Sets in Dart.
-   - `set_operations.dart`: Common set operations.
    - `collection_iterators.dart`: Iterating over collections.
    - `dart_complete_type_conversion_masterclass.dart`: Comprehensive guide to converting between all Dart data types
 
