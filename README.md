@@ -46,10 +46,10 @@ The repository is organized into the following folders:
 6. **06_Object_Oriented_Programming**  
    - `class_and_object.dart`: Classes and objects.
    - `constructors.dart`: Constructors.
-   - `getters_setters.dart`: Getters and setters.
+   - `encapsulation.dart`: Encapsulation.
    - `inheritance.dart`: Inheritance.
    - `polymorphism.dart`: Polymorphism.
-   - `abstract_classes.dart`: Abstract classes.
+   - `abstraction.dart`: Abstraction.
    - `interfaces.dart`: Interfaces.
    - `mixins.dart`: Mixins.
 
