@@ -70,6 +70,6 @@ void main() {
   person.age = 27;
 
   // Getting values using getters
-  print('Name: ${person.name}');
-  print('Age: ${person.age}');
+  print('Name: ${person.name}'); //Output: Name: Azam
+  print('Age: ${person.age}');   //Output: Age: 27
 }
