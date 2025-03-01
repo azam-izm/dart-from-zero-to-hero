@@ -54,12 +54,8 @@ The repository is organized into the following folders:
    - `mixins.dart`: Mixins.
 
 7. **07_Asynchronous_Programming**  
-   - `future.dart`: Futures in Dart.
-   - `async_await.dart`: Async/await syntax.
-   - `stream.dart`: Streams.
-   - `stream_controller.dart`: Stream controllers.
-   - `async_iterators.dart`: Async iterators.
-   - `error_handling_async.dart`: Error handling in async code.
+   - `futures_and_async_await`: Futures, async/await in Dart.
+   - `streams_and_streamcontrollers.dart`: Streams and StreamControllers in Dart.
 
 8. **08_Error_Handling**  
    - `try_catch.dart`: Try-catch blocks.
