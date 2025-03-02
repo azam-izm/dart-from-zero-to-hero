@@ -58,11 +58,7 @@ The repository is organized into the following folders:
    - `streams_and_streamcontrollers.dart`: Streams and StreamControllers in Dart.
 
 8. **08_Error_Handling**  
-   - `try_catch.dart`: Try-catch blocks.
-   - `custom_exceptions.dart`: Custom exceptions.
-   - `throwing_exceptions.dart`: Throwing exceptions.
-   - `finally_block.dart`: Finally block.
-   - `rethrow_exceptions.dart`: Rethrowing exceptions.
+   - `error_handling_in_dart.dart`: Comprehensive Error Handling in Dart: try, catch, on, finally, throw, and rethrow
 
 9. **09_File_Operations**  
    - `read_file.dart`: Reading files.
