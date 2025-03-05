@@ -66,11 +66,10 @@ void main() {
   int setBackToInt = intToSet.first; // Output: setBackToInt: 42
 
   // Int to Map
-  Map<String, int> intToMap = {
-    'value': originalInt
-  }; // Output: intToMap: {value: 42}
-  int mapBackToInt = intToMap[
-      'value']!; // Output: mapBackToInt: 42    /*  ! is necessary here because intToMap['values'] can return null if the key doesn’t exist. To avoid compile-time erros, either make mapBackToInt nullable (int?) or use ! to assert it's non-null.*/
+  Map<String, int> intToMap = {'value': originalInt}; // Output: intToMap: {value: 42}
+  int mapBackToInt = intToMap['value']!; // Output: mapBackToInt: 42    
+ /*  ! is necessary here because intToMap['values'] can return null if the key doesn’t exist. To avoid compile-time erros, 
+ either make mapBackToInt nullable (int?) or use ! to assert it's non-null.*/
 
   // ----------------------------
   // Double Conversions
@@ -78,24 +77,19 @@ void main() {
 
   // Double to Int
   int doubleToInt = originalDouble.toInt(); // Output: doubleToInt: 3
-  double intBackToDouble =
-      doubleToInt.toDouble(); // Output: intBackToDouble: 3.0
+  double intBackToDouble = doubleToInt.toDouble(); // Output: intBackToDouble: 3.0
 
   // Double to String
-  String doubleToString =
-      originalDouble.toString(); // Output: doubleToString: 3.14
-  double stringBackToDouble =
-      double.parse(doubleToString); // Output: stringBackToDouble: 3.14
+  String doubleToString = originalDouble.toString(); // Output: doubleToString: 3.14
+  double stringBackToDouble = double.parse(doubleToString); // Output: stringBackToDouble: 3.14
 
   // Double to Bool
   bool doubleToBool = originalDouble != 0; // Output: doubleToBool: true
-  double boolBackToDouble =
-      doubleToBool ? 1.0 : 0.0; // Output: boolBackToDouble: 1.0
+  double boolBackToDouble = doubleToBool ? 1.0 : 0.0; // Output: boolBackToDouble: 1.0
 
   // Double to List
   List<double> doubleToList = [originalDouble]; // Output: doubleToList: [3.14]
-  double listBackToDouble =
-      doubleToList.first; // Output: listBackToDouble: 3.14
+  double listBackToDouble = doubleToList.first; // Output: listBackToDouble: 3.14
   //OR
   // double listBackToDouble = doubleToList[0]; // Output: listBackToDouble: 3.14
 
@@ -104,48 +98,60 @@ void main() {
   double setBackToDouble = doubleToSet.first; // Output: setBackToDouble: 3.14
 
   // Double to Map
-  Map<String, double> doubleToMap = {
-    'value': originalDouble
-  }; // Output: doubleToMap: {value: 3.14}
-  double mapBackToDouble =
-      doubleToMap['value']!; // Output: mapBackToDouble: 3.14
+  Map<String, double> doubleToMap = {'value': originalDouble}; // Output: doubleToMap: {value: 3.14}
+  double mapBackToDouble = doubleToMap['value']!; // Output: mapBackToDouble: 3.14
 
   // ----------------------------
   // String Conversions
   // ----------------------------
   // String to Int
   int stringToInt = int.parse(originalString); // Output: stringToInt: 123
-  String intBackToString =
-      stringToInt.toString(); // Output: intBackToString: 123
+  String intBackToString = stringToInt.toString(); // Output: intBackToString: 123
 
   // String to Double
-  double stringToDouble =
-      double.parse(originalString); // Output: stringToDouble: 123.0
-  String doubleBackToString =
-      stringToDouble.toString(); // Output: doubleBackToString: 123.0
+  double stringToDouble = double.parse(originalString); // Output: stringToDouble: 123.0
+  String doubleBackToString = stringToDouble.toString(); // Output: doubleBackToString: 123.0
 
   // String to Bool
-  bool stringToBool =
-      originalString.toLowerCase() == 'true'; // Output: stringToBool: false
-  String boolBackToString =
-      stringToBool.toString(); // Output: boolBackToString: false
+  bool stringToBool = originalString.toLowerCase() == 'true'; // Output: stringToBool: false
+  String boolBackToString = stringToBool.toString(); // Output: boolBackToString: false
 
   // String to List (Characters)
-  List<String> stringToList =
-      originalString.split(''); // Output: stringToList: [1, 2, 3]
-  String listBackToString =
-      stringToList.join(); // Output: listBackToString: 123
+  List<String> stringToList = originalString.split(''); // Output: stringToList: [1, 2, 3]
+  String listBackToString = stringToList.join(); // Output: listBackToString: 123
 
   // String to Set (Characters)
-  Set<String> stringToSet =
-      originalString.split('').toSet(); // Output: stringToSet: {1, 2, 3}
+  Set<String> stringToSet = originalString.split('').toSet(); // Output: stringToSet: {1, 2, 3}
   String setBackToString = stringToSet.join(); // Output: setBackToString: 123
 
-  // String to Map (JSON)
-  Map<String, dynamic> stringToMap =
-      jsonDecode('{"key": "value"}'); // Output: stringToMap: {key: value}
-  String mapBackToString =
-      jsonEncode(stringToMap); // Output: mapBackToString: {"key":"value"}
+ /*
+  String to Map (JSON)
+  Condition: The string must be a valid JSON object where:
+  1. Keys must always be Strings.
+     - In JSON, keys must be enclosed in double quotes ("key"), not single quotes ('key').
+     - Single quotes for keys will result in a **FormatException** when decoding the string.
+
+  2. Values can be of any type (dynamic).
+     If the input JSON is not in the correct format, a FormatException will occur.
+     Example: `jsonDecode` expects keys to be Strings, and values can be numbers, booleans, or other JSON-encoded objects. 
+  
+                      Example of a valid JSON string 👇
+*/
+Map<String, dynamic> stringToMap = jsonDecode('{"key": "value"}'); // Output: stringToMap: {key: value}  
+// The output will be a Map where keys are always Strings, and values are dynamic (i.e., can be any data type).
+
+/* 
+  Map to JSON String
+  Condition: The map must have:
+  1. Keys should always be Strings (as JSON keys must be strings).
+  2. Values can be of any type (dynamic). The JSON format supports numbers, strings, booleans, arrays, and other JSON objects.
+     
+     If you use non-String keys (e.g., integers, booleans) in the map, `jsonEncode` will throw a TypeError.
+     This is because JSON keys must be strings, and Dart's `jsonEncode` requires the map's keys of type String.
+   
+    Example of a valid JSON Map 👉 {key: value} 
+*/
+String mapBackToString = jsonEncode(stringToMap); // Output: mapBackToString: {"key":"value"}
 
   // ----------------------------
   // Bool Conversions
@@ -160,8 +166,7 @@ void main() {
 
   // Bool to String
   String boolToString = originalBool.toString(); // Output: boolToString: true
-  bool stringBackToBool =
-      boolToString.toLowerCase() == 'true'; // Output: stringBackToBool: true
+  bool stringBackToBool = boolToString.toLowerCase() == 'true'; // Output: stringBackToBool: true
 
   // Bool to List
   List<bool> boolToList = [originalBool]; // Output: boolToList: [true]
@@ -174,9 +179,7 @@ void main() {
   bool setBackToBool = boolToSet.first; // Output: setBackToBool: true
 
   // Bool to Map
-  Map<String, bool> boolToMap = {
-    'value': originalBool
-  }; // Output: boolToMap: {value: true}
+  Map<String, bool> boolToMap = {'value': originalBool}; // Output: boolToMap: {value: true}
   bool mapBackToBool = boolToMap['value']!; // Output: mapBackToBool: true
 
   // ----------------------------
@@ -184,21 +187,15 @@ void main() {
   // ----------------------------
   // List to Int (Length)
   int listToInt = originalList.length; // Output: listToInt: 3
-  List<int> intBackToList = List.generate(
-      listToInt, (index) => index); // Output: intBackToList: [0, 1, 2]
+  List<int> intBackToList = List.generate(listToInt, (index) => index); // Output: intBackToList: [0, 1, 2]
 
   // List to Double (Length)
-  double listToDouble =
-      originalList.length.toDouble(); // Output: listToDouble: 3.0
-  List<double> doubleBackToList = [
-    listToDouble
-  ]; // Output: doubleBackToList: [3.0]
+  double listToDouble = originalList.length.toDouble(); // Output: listToDouble: 3.0
+  List<double> doubleBackToList = [listToDouble]; // Output: doubleBackToList: [3.0]
 
   // List to String (JSON)
-  String listToString =
-      jsonEncode(originalList); // Output: listToString: [1,2,3]
-  List<dynamic> stringBackToList =
-      jsonDecode(listToString); // Output: stringBackToList: [1, 2, 3]
+  String listToString = jsonEncode(originalList); // Output: listToString: [1,2,3]
+  List<dynamic> stringBackToList = jsonDecode(listToString); // Output: stringBackToList: [1, 2, 3]
 
   // List to Bool
   bool listToBool = originalList.isNotEmpty; // Output: listToBool: true
@@ -206,33 +203,26 @@ void main() {
 
   // List to Set
   Set<int> listToSet = originalList.toSet(); // Output: listToSet: {1, 2, 3}
-  List<int> setBackToList =
-      listToSet.toList(); // Output: setBackToList: [1, 2, 3]
+  List<int> setBackToList = listToSet.toList(); // Output: setBackToList: [1, 2, 3]
 
   // List to Map (Index as Key)
-  Map<int, int> listToMap =
-      originalList.asMap(); // Output: listToMap: {0: 1, 1: 2, 2: 3}
-  List<int> mapBackToList =
-      listToMap.values.toList(); // Output: mapBackToList: [1, 2, 3]
+  Map<int, int> listToMap = originalList.asMap(); // Output: listToMap: {0: 1, 1: 2, 2: 3}
+  List<int> mapBackToList = listToMap.values.toList(); // Output: mapBackToList: [1, 2, 3]
 
   // ----------------------------
   // Set Conversions
   // ----------------------------
   // Set to Int (Length)
   int setToInt = originalSet.length; // Output: setToInt: 3
-  Set<int> intBackToSet = Set.from(List.generate(
-      setToInt, (index) => index)); // Output: intBackToSet: {0, 1, 2}
+  Set<int> intBackToSet = Set.from(List.generate(setToInt, (index) => index)); // Output: intBackToSet: {0, 1, 2}
 
   // Set to Double (Length)
-  double setToDouble =
-      originalSet.length.toDouble(); // Output: setToDouble: 3.0
+  double setToDouble = originalSet.length.toDouble(); // Output: setToDouble: 3.0
   Set<double> doubleBackToSet = {setToDouble}; // Output: doubleBackToSet: {3.0}
 
   // Set to String (JSON)
-  String setToString =
-      jsonEncode(originalSet.toList()); // Output: setToString: [4,5,6]
-  Set<dynamic> stringBackToSet =
-      Set.from(jsonDecode(setToString)); // Output: stringBackToSet: {4, 5, 6}
+  String setToString = jsonEncode(originalSet.toList()); // Output: setToString: [4,5,6]
+  Set<dynamic> stringBackToSet = Set.from(jsonDecode(setToString)); // Output: stringBackToSet: {4, 5, 6}
 
   // Set to Bool
   bool setToBool = originalSet.isNotEmpty; // Output: setToBool: true
@@ -240,54 +230,38 @@ void main() {
 
   // Set to List
   List<int> setToList = originalSet.toList(); // Output: setToList: [4, 5, 6]
-  Set<int> listBackToSet =
-      setToList.toSet(); // Output: listBackToSet: {4, 5, 6}
+  Set<int> listBackToSet = setToList.toSet(); // Output: listBackToSet: {4, 5, 6}
 
   // Set to Map (Element as Key)
-  Map<int, int> setToMap = Map.fromEntries(originalSet
-      .map((e) => MapEntry(e, e))); // Output: setToMap: {4: 4, 5: 5, 6: 6}
-  Set<int> mapBackToSet =
-      setToMap.keys.toSet(); // Output: mapBackToSet: {4, 5, 6}
+  Map<int, int> setToMap = Map.fromEntries(originalSet.map((e) => MapEntry(e, e))); // Output: setToMap: {4: 4, 5: 5, 6: 6}
+  Set<int> mapBackToSet = setToMap.keys.toSet(); // Output: mapBackToSet: {4, 5, 6}
 
   // ----------------------------
   // Map Conversions
   // ----------------------------
   // Map to Int (Length)
   int mapToInt = originalMap.length; // Output: mapToInt: 2
-  Map<String, int> intBackToMap = {
-    'length': mapToInt
-  }; // Output: intBackToMap: {length: 2}
+  Map<String, int> intBackToMap = {'length': mapToInt}; // Output: intBackToMap: {length: 2}
 
   // Map to Double (Length)
-  double mapToDouble =
-      originalMap.length.toDouble(); // Output: mapToDouble: 2.0
-  Map<String, double> doubleBackToMap = {
-    'length': mapToDouble
-  }; // Output: doubleBackToMap: {length: 2.0}
+  double mapToDouble = originalMap.length.toDouble(); // Output: mapToDouble: 2.0
+  Map<String, double> doubleBackToMap = {'length': mapToDouble}; // Output: doubleBackToMap: {length: 2.0}
 
   // Map to String (JSON)
-  String mapToString =
-      jsonEncode(originalMap); // Output: mapToString: {"name":"Azam","age":27}
-  Map<String, dynamic> stringBackToMap =
-      jsonDecode(mapToString); // Output: stringBackToMap: {name: Azam, age: 27}
+  String mapToString = jsonEncode(originalMap); // Output: mapToString: {"name":"Azam","age":27}
+  Map<String, dynamic> stringBackToMap = jsonDecode(mapToString); // Output: stringBackToMap: {name: Azam, age: 27}
 
   // Map to Bool
   bool mapToBool = originalMap.isNotEmpty; // Output: mapToBool: true
-  Map<String, bool> boolBackToMap = {
-    'value': mapToBool
-  }; // Output: boolBackToMap: {value: true}
+  Map<String, bool> boolBackToMap = {'value': mapToBool}; // Output: boolBackToMap: {value: true}
 
   // Map to List (Entries)
-  List<MapEntry<String, dynamic>> mapToList = originalMap.entries
-      .toList(); // Output: mapToList: [MapEntry(name: Azam), MapEntry(age: 27)]
-  Map<String, dynamic> listBackToMap = Map.fromEntries(
-      mapToList); // Output: listBackToMap: {name: Azam, age: 27}
+  List<MapEntry<String, dynamic>> mapToList = originalMap.entries.toList(); // Output: mapToList: [MapEntry(name: Azam), MapEntry(age: 27)]
+  Map<String, dynamic> listBackToMap = Map.fromEntries(mapToList); // Output: listBackToMap: {name: Azam, age: 27}
 
   // Map to Set (Entries)
-  Set<MapEntry<String, dynamic>> mapToSet = originalMap.entries
-      .toSet(); // Output: mapToSet: {MapEntry(name: Azam), MapEntry(age: 27)}
-  Map<String, dynamic> setBackToMap =
-      Map.fromEntries(mapToSet); // Output: setBackToMap: {name: Azam, age: 27}
+  Set<MapEntry<String, dynamic>> mapToSet = originalMap.entries.toSet(); // Output: mapToSet: {MapEntry(name: Azam), MapEntry(age: 27)}
+  Map<String, dynamic> setBackToMap = Map.fromEntries(mapToSet); // Output: setBackToMap: {name: Azam, age: 27}
 
   // ========================
   // Print All Conversions
