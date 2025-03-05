@@ -135,12 +135,12 @@ void main() {
      If the input JSON is not in the correct format, a FormatException will occur.
      Example: `jsonDecode` expects keys to be Strings, and values can be numbers, booleans, or other JSON-encoded objects. 
   
-                      Example of a valid JSON string 👇
-*/
-Map<String, dynamic> stringToMap = jsonDecode('{"key": "value"}'); // Output: stringToMap: {key: value}  
-// The output will be a Map where keys are always Strings, and values are dynamic (i.e., can be any data type).
+                        Example of a valid JSON string 👇
+  */
+  Map<String, dynamic> stringToMap = jsonDecode('{"key": "value"}'); // Output: stringToMap: {key: value}  
+  // The output will be a Map where keys are always Strings, and values are dynamic (i.e., can be any data type).
 
-/* 
+  /* 
   Map to JSON String
   Condition: The map must have:
   1. Keys should always be Strings (as JSON keys must be strings).
@@ -150,8 +150,8 @@ Map<String, dynamic> stringToMap = jsonDecode('{"key": "value"}'); // Output: st
      This is because JSON keys must be strings, and Dart's `jsonEncode` requires the map's keys of type String.
    
     Example of a valid JSON Map 👉 {key: value} 
-*/
-String mapBackToString = jsonEncode(stringToMap); // Output: mapBackToString: {"key":"value"}
+  */
+  String mapBackToString = jsonEncode(stringToMap); // Output: mapBackToString: {"key":"value"}
 
   // ----------------------------
   // Bool Conversions
@@ -195,6 +195,8 @@ String mapBackToString = jsonEncode(stringToMap); // Output: mapBackToString: {"
 
   // List to String (JSON)
   String listToString = jsonEncode(originalList); // Output: listToString: [1,2,3]
+  /* jsonDecode returns a dynamic type, so using List<int> will result in a type error. 
+  Use List<dynamic> even if you are sure the list contains only int values.*/
   List<dynamic> stringBackToList = jsonDecode(listToString); // Output: stringBackToList: [1, 2, 3]
 
   // List to Bool
